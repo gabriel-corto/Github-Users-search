@@ -1,4 +1,5 @@
 
+
  const searchElement = document.querySelector('#searchElement') 
  const form = document.querySelector('.form')
 
@@ -8,13 +9,19 @@
 
 function App() {
     form.addEventListener('submit', (event) => {
+
         if(searchElement.value == "") {
+
             showResult.innerHTML = /* html */
+            
             `<div class="error">
                 <i class="fa-solid fa-warning"></i>
                 WARNING! Input can not be empty
             </div>`
-        }else {
+
+        }
+        else {
+
             event.preventDefault()
 
             showResult.innerHTML = /*html*/`
@@ -23,8 +30,9 @@ function App() {
                     <span>Searching user...</span>
                 </div>
             `
+
             getUsers()
-            }
+        }
     })
     
 }App()
@@ -38,8 +46,11 @@ async function getUsers(){
         showResult.innerHTML = /*html */
             `
                 <p>Name: <span >${userData.name}</span></p>
+
                 <p>followers: <span>${userData.followers}</span></p>
+
                 <p>Repositories: <span>${userData.public_repos}</span></p>
+                
                 <p>Location: <span>${userData.location}</span></p>
             `
         
